@@ -1,14 +1,18 @@
+import './reset.css';
+import './style.css';
+import React from "react";
+import Init from "./Init";
+import Questions from "./Questions";
 
-import Header from "./Header";
-import Main from "./Main";
-import Bottom from "./Bottom";
+
 
 export default function App() {
+    const[tela, setTela] =React.useState('init');
     return (
-        <div>
-            <Header />
-            <Main />
-            <Bottom />
-        </div>
+        <>
+        {
+           tela ==='init'? <Init setTela={setTela}/> : <Questions/>
+        }
+        </>
     );
 }
