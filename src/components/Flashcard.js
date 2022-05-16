@@ -55,15 +55,15 @@ export default function Flashcard(props) {
     }
 
 
-    function Respondido(valorResposta, ionIcon) {
+    function Respondido(memory, ionIcon) {
 
-        setTypeClass(valorResposta);
+        setTypeClass(memory);
         setIcone(ionIcon);
         setTelaFlash("respondido");
         props.mudarIcones([...props.iconesAtuais, ionIcon]);
         props.contaRespostas(props.qtdRespostas + 1);
 
-        if (valorResposta === 'bom' || valorResposta === 'medio') {
+        if (memory === 'bom' || memory === 'medio') {
             props.setLembrouQtd(props.lembrouQtd + 1);
         }
     }
